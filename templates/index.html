@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Predict Your Car Price</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+        <h1>Car Price Prediction</h1>
+        <form action="{{url_for('predict')}}" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Year</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Year" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">What is the Showroom Price?(In lakhs)</label>
+                <input name="Present_Price" required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Year" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">How many kilometers drived?</label>
+                <input name="Kms_Driven" required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Year" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">How much owners previously had the car(0or 1 or 3)?</label>
+                <input name="Owner" required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Year" >
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">What is Fuel Type?</label>
+                <select class="form-control" name = 'Fuel_Type_Petrol' required="required" id="exampleFormControlSelect1">
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Are you a Dealer or Individual</label>
+                <select class="form-control" name = 'Seller_Type_Individual' required="required" id="exampleFormControlSelect1">
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Transmission Type</label>
+                <select class="form-control" name = 'Transmission_Mannual' required="required" id="exampleFormControlSelect1">
+                    <option value="Mannual">Manual car</option>
+                    <option value="Automatic">Automatic Car</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate Selling Price</button>
+        </form>
+        
+        <h3>{{prediction_text}}</h3>
+        </div>
+
+    </body>
+</html
